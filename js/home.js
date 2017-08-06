@@ -9,6 +9,7 @@ function post(s) {
     xmlhttp.open("POST", "ajaxtest.php", true);
     xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     var p="rec=" + s;
+    document.getElementById("enterRecieverNameHere").innerHTML=s;
     xmlhttp.send(p);
 }
                  

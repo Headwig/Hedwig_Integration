@@ -21,7 +21,7 @@
 					<img style='height: 6vh ; width: 10vh' src="res/ic_notifications_active.png">
 				</div>
 				<div id="myCountryName">
-					<div id="enterSenderNameHere">Democratic People's Republic of Korea</div>
+					<div id="enterSenderNameHere"><?php echo $_SESSION['username'];?></div>
 				</div>
 			</div>
 			<hr>
@@ -30,7 +30,7 @@
 		<a href=".\gsl.html">General Speaker List</a>
 		<a href=".\moderated_caucus.html">Moderated Caucus</a>
 		<a href=".\resources.html">Resources</a>
-		<a href="#">Logout</a>
+		<a href="logout.php">Logout</a>
 	</div>
 	<div id="myNotifications" class="sidenav">
 		<div>
@@ -44,7 +44,7 @@
 			<div id="hamburger">
 				<img style='height: 4vh ; width: 4vh' onclick="openNav()" src="res/ic_menu.png" title="Options">
 			</div>
-			<div id="notification">
+			<div id="notificationIcon">
 				<img style='height: 4vh ; width: 4vh' onclick="openNotif()" src="res/ic_notifications.png" title="Notifications">
 			</div>
 			<div id="countrylist">
@@ -77,7 +77,7 @@
 				<img style='height: 6vh ; width: 10vh' src="res/ic_notifications_active.png">
 			</div>
 			<div id="countryName">
-				<div id="enterRecieverNameHere">Democratic People's Republic of Korea</div>
+				<div id="enterRecieverNameHere">Receiver name</div>
 			</div>
 		</div>
 		<div id="messagesArea">
