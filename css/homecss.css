@@ -123,6 +123,7 @@ body
 #countryName
 {
 	float: left;
+	position: absolute;
 	font-weight: bold;
 	font-size: 2.5vh;
 	margin-top: 2vh;

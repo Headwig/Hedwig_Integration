@@ -8,8 +8,8 @@
         <script>
             setInterval(function(){ajax()}, 800);
             function myFunction(ff) {
-                alert(ff.id+"home.php");
-                document.getElementById(ff.id).click(); // Click on the checkbox
+            	closeNotif();
+            	document.getElementById(ff.name).click(); // Click on the checkbox
             }
     </script> 
 </head>
@@ -36,6 +36,7 @@
 		<div>
 			<p>Notifications</p>
 			<hr>
+			<div id='notification'></div>
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNotif()">&times;</a>
 		</div>
 	</div>
@@ -84,7 +85,7 @@
 		All of my messages come here! This scrolls too!
 		</div>
 		<div id="inputArea">
-			<textarea id="msg">Messages are entered here.</textarea>
+			<textarea id="msg" placeholder="Enter your message here."></textarea>
 			<div id="sendOptions">
 				<div id="viaEbOption"><input type="checkbox" name="viaEb" id="veb">Via EB</div>
 				<img id="sendit" src="res/ic_send.png" title="Send" onclick='sub()'>

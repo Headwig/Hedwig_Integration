@@ -12,29 +12,34 @@
 
 ?>
 <html>
-    <script>
-    
-
-</script> 
     <body>
         <div id="notifbar">
-            <?php if ($sen== 'EB') { ?>
-            <button  id="<?php echo $row['sender']?>" onclick="myFunction(this)" > You have a new message(s) from <?php echo $row['sender'] ?> </button>
-            <br>
-            <?php } else { ?>
-            <?php   if ( $row['sender'] !=$_SESSION['rec']) { ?>
-                <button  id="<?php echo $row['sender']?>" onclick="myFunction(this)" > You have a new message(s) who chose the via EB option 
-                    <?php echo $row['sender'] ?> </button>
-                <br>
-            <?php }else {
-                $q2="UPDATE chat SET status='r' WHERE status='u' and sender='".$_SESSION['rec']."' and receiver='".$_SESSION['username']."'";
-                $run2=$con->query($q2); 
-                
-}} ?>
-    
-
-                        
-
+            <?php
+                if ($sen == 'EB')
+                {
+                    ?>
+                    <button  name="<?php echo $row['sender']?>" onclick="myFunction(this)" > You have a new message(s) from <?php echo $row['sender'] ?> </button>
+                    <br>
+                    <?php }
+                else
+                {
+                    ?>
+                    <?php
+                    if ( $row['sender'] != $_SESSION['rec'])
+                    {
+                        ?>
+                        <button  name="<?php echo $row['sender']?>" onclick="myFunction(this)" > You have a new message(s) who chose the via EB option 
+                        <?php echo $row['sender'] ?> </button>
+                        <br>
+                        <?php
+                    }
+                    else
+                    {
+                        $q2="UPDATE chat SET status='r' WHERE status='u' and sender='".$_SESSION['rec']."' and receiver='".$_SESSION['username']."'";
+                        $run2=$con->query($q2);
+                    }
+                }
+            ?>
 </div>
 </body>
    
