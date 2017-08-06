@@ -134,6 +134,7 @@ body
 }
 #messagesArea
 {
+	overflow-x: hidden;
 	font-size: 2.5vh;
 	padding: 1vh;
 	overflow-y: auto;

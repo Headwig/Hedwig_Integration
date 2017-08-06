@@ -18,17 +18,77 @@
         $query="SELECT *  FROM chat WHERE (chatid='$c' OR chatid='$cc')  ";
         $run=$con->query($query);
         while($row=$run->fetch_array() ) :
-?>
-<html>
-    <body>
-        <div id="chat_data">
-            <span style="color:green"><?php echo $row['sender']?></span>:
-            <span style="color:brown"><?php echo $row['message']?> Message for ( </span>
-            <span style="color:brown"><?php echo $row['receiver']?>) </span>
-            <span style="float:right"><?php echo formatDate($row['date'])?></span>
-        </div>
-    </body>
-<?php  endwhile; 
+        ?>
+        <html>
+            <body>
+                <div id="chat_data">
+                    <?php
+                        if ($_SESSION['rec']!=$row['sender'])
+                        {
+                            echo "<p class='sender'>".$row['message']."</p>";
+                        }
+                        else
+                        {
+                            echo "<p class='reciever'>".$row['message']."</p>";
+                        }
+                    ?>
+                    <!--<p class="sender"><?php //echo $row['message']." ~ ".formatDate($row['date'])?></p>-->
+                </div>
+                <style type="text/css">
+                    #messagesArea
+                    {
+                        word-wrap: break-word;
+                        overflow-x: hidden;
+                        font-size: 2.5vh;
+                        padding: 1vh;
+                        overflow-y: auto;
+                        height: 80vh;
+                    }
+                    .sender
+                    {
+                        background:lightgreen;
+                        padding:20px;
+                        margin:20px;
+                        position:relative;
+                        border-radius:5px;
+                    }
+                    .sender:after {
+                        content:"";
+                        width:0;
+                        height:0;
+                        border-top:20px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        border-left: 20px solid lightgreen;
+                        right:-20px;
+                        position: absolute;
+                        top:10px;
+                    }
+                    .reciever
+                    {
+                        word-wrap: break-word;
+                        background:lightskyblue;
+                        padding:20px;
+                        margin:20px;
+                        position:relative;
+                        border-radius:5px;
+                    }
+                    .reciever:after
+                    {
+                        content:"";
+                        width:0;
+                        height:0;
+                        border-top:20px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        border-right: 20px solid lightskyblue;
+                        border-left:none;
+                        right:auto;
+                        left:-20px;
+                        position: absolute;
+                        top:10px;
+                    }
+                </style>
+            </body>
+        <?php  endwhile; 
     }
 ?>
 </html>    

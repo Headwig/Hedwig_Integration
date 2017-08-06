@@ -11,7 +11,7 @@
             	closeNotif();
             	document.getElementById(ff.name).click(); // Click on the checkbox
             }
-    </script> 
+    	</script>
 </head>
 <body onload="ajax();">
 	<div id="mySidenav" class="sidenav">

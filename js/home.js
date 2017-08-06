@@ -11,9 +11,16 @@ function post(s) {
     var p="rec=" + s;
     document.getElementById("enterRecieverNameHere").innerHTML=s;
     xmlhttp.send(p);
+    setTimeout(function()
+    {
+        var element = document.getElementById("messagesArea");
+        element.scrollTop = element.scrollHeight;
+    }, 1000);
 }
-                 
 function sub() {
+    var element = document.getElementById("messagesArea");
+    element.scrollTop = element.scrollHeight;
+    
     var myText = document.getElementById("msg");
     var veb=document.getElementById('veb').checked;
     var s = myText.value;
@@ -32,9 +39,15 @@ function sub() {
     var p="msg="+s+"&veb="+t;
     x.send(p);
     document.getElementById("msg").value="";
+    setTimeout(function()
+    {
+        var element = document.getElementById("messagesArea");
+        element.scrollTop = element.scrollHeight;
+    }, 1000);
 }
 
-function ajax(){
+function ajax()
+{
      notifcheck();
     var req = new XMLHttpRequest();
     req.onreadystatechange = function(){
@@ -46,11 +59,24 @@ function ajax(){
     req.send();
 }
 
+var element = document.getElementById("messagesArea");
+element.scrollTop = element.scrollHeight;
+
 function notifcheck(){
     var req = new XMLHttpRequest();
     req.onreadystatechange = function(){
         if(req.readyState == 4 && req.status == 200){
-            document.getElementById('notification').innerHTML = req.responseText;
+            var ajaxResponse = req.responseText;
+            var notificationData = document.getElementById('notification').innerHTML;
+            if(ajaxResponse != notificationData)
+            {
+                setTimeout(function()
+                {
+                    var element = document.getElementById("messagesArea");
+                    element.scrollTop = element.scrollHeight;
+                }, 1000);
+            }
+            document.getElementById('notification').innerHTML = ajaxResponse;
         }
     }
     req.open('GET', 'notif.php', true);
