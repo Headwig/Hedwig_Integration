@@ -23,7 +23,7 @@ body
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: brown;
+    background-color: black;
     overflow-x: hidden;
     padding-top: 6vh;
     transition: 0.5s;
@@ -90,18 +90,12 @@ body
 	margin-top: 1vh;
 	float: right;
 }
-#countrylist
-{
-	margin-top: 1vh;
-	margin-right: 2vw;
-	float: right;
-}
 #countrylistArea
 {
 	font-size: 2.5vh;
 	height: 90vh;
 	padding: 1vh;
-	background-color: red;
+	background-color: lightgreen;
 	overflow-y: auto;
 }
 #messagePane
@@ -110,7 +104,7 @@ body
 }
 #tab2
 {
-	background-color: lightgreen;
+	background-color: deepskyblue;
 	padding: 1vh;
 	height: 6vh;
 }
@@ -139,7 +133,6 @@ body
 	padding: 1vh;
 	overflow-y: auto;
 	height: 80vh;
-	background-color: orange;
 }
 #inputArea
 {
@@ -163,7 +156,6 @@ body
 {
 	margin-top: 1.5vh;
 	margin-left: 1vw;
-	background-color: lightgreen;
 	font-size: 1.5vh;
 }
 #sendit

@@ -48,9 +48,6 @@
 			<div id="notificationIcon">
 				<img style='height: 4vh ; width: 4vh' onclick="openNotif()" src="res/ic_notifications.png" title="Notifications">
 			</div>
-			<div id="countrylist">
-				<img style='height: 4vh ; width: 4vh' src="res/ic_chat.png" title="Country List">
-			</div>
 		</div>
 		<div id="countrylistArea">
 			<?php
@@ -72,7 +69,8 @@
         	?>
 		</div>
 	</div>
-	<div id="messagePane">
+	<vr>
+	<div style="border-left:1px solid #000;height:8vh" id="messagePane">
 		<div id="tab2">
 			<div id="countryDp">
 				<img style='height: 6vh ; width: 10vh' src="res/ic_notifications_active.png">

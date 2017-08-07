@@ -16,6 +16,12 @@ var z = w - (32/100)*w - (12/100)*h;
 var myCountryNameWidth = z + "px";
 document.getElementById("countryName").style.width = myCountryNameWidth;
 
+var a = (30/100)*w - 1;
+var messagePaneMargin = a + "px";
+document.getElementById("messagePane").style.marginLeft = messagePaneMargin;
+
+document.getElementById("tab1").style.marginRight = "1px";
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "30%";
 }
